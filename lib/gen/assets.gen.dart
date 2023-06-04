@@ -15,6 +15,8 @@ class Assets {
   static const AssetGenImage about = AssetGenImage('assets/about.png');
   static const AssetGenImage astronaut = AssetGenImage('assets/astronaut.png');
   static const AssetGenImage bg = AssetGenImage('assets/bg.png');
+  static const AssetGenImage createdbyamir1 =
+      AssetGenImage('assets/createdbyamir1.png');
   static const AssetGenImage gameover = AssetGenImage('assets/gameover.png');
   static const AssetGenImage github = AssetGenImage('assets/github.png');
   static const AssetGenImage greenufo1 = AssetGenImage('assets/greenufo1.png');
@@ -32,6 +34,7 @@ class Assets {
         about,
         astronaut,
         bg,
+        createdbyamir1,
         gameover,
         github,
         greenufo1,
