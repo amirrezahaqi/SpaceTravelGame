@@ -3,8 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:hellofirebase/gen/assets.gen.dart';
 
-class Splash extends StatelessWidget {
+import 'gamepage.dart';
+
+class Splash extends StatefulWidget {
   const Splash({super.key});
+
+  @override
+  State<Splash> createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    Future.delayed(const Duration(seconds: 3)).then((value) async {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => const GamePage()));
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -2,8 +2,7 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-import 'about.dart';
+import 'package:hellofirebase/splash.dart';
 import 'firebase_options.dart';
 
 @pragma('vm:entry-point')
@@ -50,6 +49,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(child: About());
+    return const SafeArea(child: Splash());
   }
 }

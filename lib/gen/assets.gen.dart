@@ -12,38 +12,40 @@ import 'package:flutter/widgets.dart';
 class Assets {
   Assets._();
 
+  static const AssetGenImage aboutmee = AssetGenImage('assets/Aboutmee.png');
+  static const AssetGenImage records = AssetGenImage('assets/Records.png');
+  static const AssetGenImage scores = AssetGenImage('assets/Scores.png');
   static const AssetGenImage about = AssetGenImage('assets/about.png');
   static const AssetGenImage astronaut = AssetGenImage('assets/astronaut.png');
   static const AssetGenImage bg = AssetGenImage('assets/bg.png');
   static const AssetGenImage createdbyamir1 =
       AssetGenImage('assets/createdbyamir1.png');
+  static const AssetGenImage earth1 = AssetGenImage('assets/earth1.jpg');
   static const AssetGenImage gameover = AssetGenImage('assets/gameover.png');
   static const AssetGenImage github = AssetGenImage('assets/github.png');
   static const AssetGenImage greenufo1 = AssetGenImage('assets/greenufo1.png');
   static const AssetGenImage instagram = AssetGenImage('assets/instagram.png');
   static const AssetGenImage linkedin = AssetGenImage('assets/linkedin.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
-  static const AssetGenImage monte = AssetGenImage('assets/monte.png');
-  static const AssetGenImage record = AssetGenImage('assets/record.png');
-  static const AssetGenImage score = AssetGenImage('assets/score.png');
   static const AssetGenImage twitter = AssetGenImage('assets/twitter.png');
   static const AssetGenImage website = AssetGenImage('assets/website.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        aboutmee,
+        records,
+        scores,
         about,
         astronaut,
         bg,
         createdbyamir1,
+        earth1,
         gameover,
         github,
         greenufo1,
         instagram,
         linkedin,
         logo,
-        monte,
-        record,
-        score,
         twitter,
         website
       ];
