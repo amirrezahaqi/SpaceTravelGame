@@ -52,7 +52,7 @@ class About extends StatelessWidget {
                         }
                       }
 
-                      myLaunchUrl("https://amirrezahaqi.ir");
+                      myLaunchUrl("https://instagram.com/amirrezahaqi");
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -73,7 +73,7 @@ class About extends StatelessWidget {
                         }
                       }
 
-                      myLaunchUrl("https://amirrezahaqi.ir");
+                      myLaunchUrl("https://www.linkedin.com/in/amirreza-haqi/");
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -94,7 +94,7 @@ class About extends StatelessWidget {
                         }
                       }
 
-                      myLaunchUrl("https://amirrezahaqi.ir");
+                      myLaunchUrl("https://github.com/amirrezahaqi");
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -115,7 +115,7 @@ class About extends StatelessWidget {
                         }
                       }
 
-                      myLaunchUrl("https://amirrezahaqi.ir");
+                      myLaunchUrl("https://twitter.com/amirrezahaqi");
                     },
                     child: Container(
                       decoration: BoxDecoration(

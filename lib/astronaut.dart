@@ -7,8 +7,8 @@ class Astronaut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
-      height: 150,
+      width: 200,
+      height: 200,
       child: Image.asset(Assets.astronaut.path),
     );
   }
