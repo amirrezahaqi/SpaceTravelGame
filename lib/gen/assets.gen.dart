@@ -28,6 +28,7 @@ class Assets {
   static const AssetGenImage linkedin = AssetGenImage('assets/linkedin.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
   static const AssetGenImage twitter = AssetGenImage('assets/twitter.png');
+  static const AssetGenImage ufo2 = AssetGenImage('assets/ufo2.png');
   static const AssetGenImage website = AssetGenImage('assets/website.png');
 
   /// List of all assets
@@ -47,6 +48,7 @@ class Assets {
         linkedin,
         logo,
         twitter,
+        ufo2,
         website
       ];
 }
