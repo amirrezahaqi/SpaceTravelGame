@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:hellofirebase/gen/assets.gen.dart';
+import 'package:spacetravel/gen/assets.gen.dart';
 
 import 'gamepage.dart';
 
@@ -16,8 +15,17 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3)).then((value) async {
-      Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => const GamePage()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const GamePage()));
+      // void playSampleSound() async {
+      //   AudioPlayer player = AudioPlayer();
+      //   player.play(UrlSource(
+      //       'https://static.rfstat.com/hosting/file/Sounds/75_second/Midnight%2075.mp3'));
+
+      //   player.setReleaseMode(ReleaseMode.loop);
+      // }
+
+      // playSampleSound();
     });
     super.initState();
   }
@@ -26,9 +34,13 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(alignment: Alignment.center, children: [
-        Image.asset(
-          Assets.bg.path,
-          fit: BoxFit.cover,
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/splashbg.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         Center(
             child: Column(

@@ -1,4 +1,4 @@
-name: hellofirebase
+name: spacetravel
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -41,6 +41,15 @@ dependencies:
   firebase_messaging: ^14.2.4
   flutter_spinkit: ^5.2.0
   url_launcher: ^6.1.11
+  audioplayers: ^4.1.0
+  flutter_launcher_icons: ^0.13.1
+  shared_preferences: ^2.0.11
+
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/applogo.png"
+  min_sdk_android: 20
 
 dev_dependencies:
   build_runner:
@@ -69,6 +78,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/applogo.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

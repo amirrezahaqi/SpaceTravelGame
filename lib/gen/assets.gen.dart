@@ -16,6 +16,7 @@ class Assets {
   static const AssetGenImage records = AssetGenImage('assets/Records.png');
   static const AssetGenImage scores = AssetGenImage('assets/Scores.png');
   static const AssetGenImage about = AssetGenImage('assets/about.png');
+  static const AssetGenImage applogo = AssetGenImage('assets/applogo.png');
   static const AssetGenImage astronaut = AssetGenImage('assets/astronaut.png');
   static const AssetGenImage bg = AssetGenImage('assets/bg.png');
   static const AssetGenImage createdbyamir1 =
@@ -27,16 +28,19 @@ class Assets {
   static const AssetGenImage instagram = AssetGenImage('assets/instagram.png');
   static const AssetGenImage linkedin = AssetGenImage('assets/linkedin.png');
   static const AssetGenImage logo = AssetGenImage('assets/logo.png');
+  static const String music = 'music.mp3';
+  static const AssetGenImage splashbg = AssetGenImage('assets/splashbg.jpg');
   static const AssetGenImage twitter = AssetGenImage('assets/twitter.png');
   static const AssetGenImage ufo2 = AssetGenImage('assets/ufo2.png');
   static const AssetGenImage website = AssetGenImage('assets/website.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
+  List<dynamic> get values => [
         aboutmee,
         records,
         scores,
         about,
+        applogo,
         astronaut,
         bg,
         createdbyamir1,
@@ -47,6 +51,8 @@ class Assets {
         instagram,
         linkedin,
         logo,
+        music,
+        splashbg,
         twitter,
         ufo2,
         website

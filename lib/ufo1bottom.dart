@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hellofirebase/gen/assets.gen.dart';
+import 'package:spacetravel/gen/assets.gen.dart';
 
 // ignore: must_be_immutable
 class Ufo extends StatelessWidget {

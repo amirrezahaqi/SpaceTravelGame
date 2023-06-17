@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hellofirebase/gen/assets.gen.dart';
+import 'package:spacetravel/gen/assets.gen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class About extends StatelessWidget {
@@ -10,9 +10,13 @@ class About extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(alignment: Alignment.center, children: [
-        Image.asset(
-          Assets.bg.path,
-          fit: BoxFit.cover,
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/splashbg.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         Center(
             child: Column(
@@ -43,111 +47,67 @@ class About extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GestureDetector(
-                    onTap: () {
-                      myLaunchUrl(String url) async {
-                        var uri = Uri.parse(url);
-                        if (await canLaunchUrl(uri)) {
-                          await launchUrl(uri);
+                  IconButton(
+                      onPressed: () {
+                        myLaunchUrl(String url) async {
+                          var uri = Uri.parse(url);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
                         }
-                      }
 
-                      myLaunchUrl("https://instagram.com/amirrezahaqi");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
-                          border: Border.all(color: Colors.yellow, width: 2)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(Assets.instagram.path)),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      myLaunchUrl(String url) async {
-                        var uri = Uri.parse(url);
-                        if (await canLaunchUrl(uri)) {
-                          await launchUrl(uri);
+                        myLaunchUrl(
+                            "https://www.linkedin.com/in/amirreza-haqi/");
+                      },
+                      icon: Image.asset(Assets.linkedin.path)),
+                  IconButton(
+                      onPressed: () {
+                        myLaunchUrl(String url) async {
+                          var uri = Uri.parse(url);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
                         }
-                      }
 
-                      myLaunchUrl("https://www.linkedin.com/in/amirreza-haqi/");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
-                          border: Border.all(color: Colors.yellow, width: 2)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(Assets.linkedin.path)),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      myLaunchUrl(String url) async {
-                        var uri = Uri.parse(url);
-                        if (await canLaunchUrl(uri)) {
-                          await launchUrl(uri);
+                        myLaunchUrl("https://instagram.com/amirrezahaqi");
+                      },
+                      icon: Image.asset(Assets.instagram.path)),
+                  IconButton(
+                      onPressed: () {
+                        myLaunchUrl(String url) async {
+                          var uri = Uri.parse(url);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
                         }
-                      }
 
-                      myLaunchUrl("https://github.com/amirrezahaqi");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
-                          border: Border.all(color: Colors.yellow, width: 2)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(Assets.github.path)),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      myLaunchUrl(String url) async {
-                        var uri = Uri.parse(url);
-                        if (await canLaunchUrl(uri)) {
-                          await launchUrl(uri);
+                        myLaunchUrl("https://twitter.com/amirrezahaqi");
+                      },
+                      icon: Image.asset(Assets.twitter.path)),
+                  IconButton(
+                      onPressed: () {
+                        myLaunchUrl(String url) async {
+                          var uri = Uri.parse(url);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
                         }
-                      }
 
-                      myLaunchUrl("https://twitter.com/amirrezahaqi");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
-                          border: Border.all(color: Colors.yellow, width: 2)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(Assets.twitter.path)),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      myLaunchUrl(String url) async {
-                        var uri = Uri.parse(url);
-                        if (await canLaunchUrl(uri)) {
-                          await launchUrl(uri);
+                        myLaunchUrl("https://github.com/amirrezahaqi");
+                      },
+                      icon: Image.asset(Assets.github.path)),
+                  IconButton(
+                      onPressed: () {
+                        myLaunchUrl(String url) async {
+                          var uri = Uri.parse(url);
+                          if (await canLaunchUrl(uri)) {
+                            await launchUrl(uri);
+                          }
                         }
-                      }
 
-                      myLaunchUrl("https://amirrezahaqi.ir");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.red,
-                          border: Border.all(color: Colors.yellow, width: 2)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Image.asset(Assets.website.path)),
-                    ),
-                  ),
+                        myLaunchUrl("https://amirrezahaqi.ir");
+                      },
+                      icon: Image.asset(Assets.website.path)),
                 ],
               ),
             )

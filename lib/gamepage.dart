@@ -1,10 +1,12 @@
 import 'dart:async';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:hellofirebase/about.dart';
-import 'package:hellofirebase/astronaut.dart';
-import 'package:hellofirebase/ufo1bottom.dart';
-import 'package:hellofirebase/ufo2top.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:spacetravel/about.dart';
+import 'package:spacetravel/astronaut.dart';
+import 'package:spacetravel/ufo1bottom.dart';
+import 'package:spacetravel/ufo2top.dart';
 
 import 'gen/assets.gen.dart';
 
@@ -20,17 +22,63 @@ class _GamePageState extends State<GamePage> {
 
   static double astroYaxis = 0;
   static double ufoXone = 2.5;
-  double ufoXtwo = ufoXone + 1.5;
+  double ufoXtwo = ufoXone + 2.5;
   //امتیاز و ریکورد
   static int score = 0;
-  static int record = 0;
+  int record = 0;
   //زمان و ارتفاع
   double time = 0;
   double height = 0;
   double intialheight = astroYaxis;
   bool gameHasStart = false;
-
+  bool isPlaying = true;
 //فانکشن ها
+  AudioPlayer audioPlayer = AudioPlayer();
+
+  Future<void> loadRecord() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      // بارگیری ریکورد از حافظه و در صورتی که قبلا ذخیره شده باشد
+      // در غیر این صورت مقدار پیش‌فرض 0 است
+      record = prefs.getInt('record') ?? 0;
+    });
+  }
+
+  Future<void> saveRecord(int value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      // ذخیره ریکورد در حافظه
+      prefs.setInt('record', value);
+    });
+  }
+
+  Future<void> playAudio() async {
+    await audioPlayer.play(AssetSource(Assets.music));
+    setState(() {
+      isPlaying = true;
+    });
+  }
+
+  Future<void> stopAudio() async {
+    await audioPlayer.stop();
+    setState(() {
+      isPlaying = false;
+    });
+  }
+
+  @override
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // بارگیری ریکورد از حافظه
+    loadRecord();
+    playAudio();
+  }
 
 //پریدن
 
@@ -42,7 +90,10 @@ class _GamePageState extends State<GamePage> {
     });
 
     if (score >= record) {
-      record = score;
+      setState(() {
+        record = score;
+        saveRecord(record); // ذخیره ریکورد در حافظه
+      });
     }
   }
 
@@ -67,7 +118,7 @@ class _GamePageState extends State<GamePage> {
         astroYaxis = intialheight - height;
         setState(() {
           if (ufoXone < -1.1) {
-            ufoXone += 2.2;
+            ufoXone += 3.2;
           } else {
             ufoXone -= 0.05;
           }
@@ -173,35 +224,32 @@ class _GamePageState extends State<GamePage> {
                         alignment: Alignment(0, astroYaxis),
                         child: const Astronaut(),
                       ),
+                      Positioned(
+                        top: 5,
+                        left: 5,
+                        child: IconButton(
+                            onPressed: isPlaying ? stopAudio : playAudio,
+                            icon: Icon(
+                              isPlaying
+                                  ? Icons.music_note_outlined
+                                  : Icons.music_off_outlined,
+                              color: Colors.amber,
+                            )),
+                      ),
                       Container(
-                        alignment: const Alignment(3.5, -0.55),
+                        alignment: const Alignment(2, -0.3),
                         width: size.width / 2.5,
                         child: gameHasStart
                             ? const Text("")
-                            : TextButton(
-                                style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(50),
-                                            side: const BorderSide(
-                                                width: 2.3,
-                                                color: Colors.amber))),
-                                    backgroundColor:
-                                        const MaterialStatePropertyAll(
-                                            Colors.red)),
-                                onPressed: () {},
-                                child: const Padding(
-                                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                                  child: Text(
-                                    "Play Now",
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.amber),
-                                  ),
-                                )),
+                            : const Center(
+                                child: Text(
+                                  "TAP TO  PLAY",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      letterSpacing: 5),
+                                ),
+                              ),
                       ),
                       AnimatedContainer(
                         alignment: Alignment(ufoXtwo, 1.2),
