@@ -1,16 +1,11 @@
-# hellofirebase
+Space Travel Game
 
-A new Flutter project.
+🚀🤩👽Are you ready for a space trip?
+So let's go :)
+👽👽You have to try to keep the astronaut in the middle of the screen, be very careful not to fall or fall into the trap of the aliens.
+At the bottom of the page, your records will be saved, so I can see what number you break the record with
 
-## Getting Started
+😉😌😎Install this game now and enjoy it
 
-This project is a starting point for a Flutter application.
+![image](https://github.com/amirrezahaqi/firebase_test/assets/88787993/fbd45120-72e8-4a23-bee0-ecd6bfae29be)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
